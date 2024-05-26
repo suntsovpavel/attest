@@ -1,0 +1,14 @@
+{% extends 'myapp/baseUserStatus.html' %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+    <h2>{{ recipe.name }}</h2>
+    <img src="{{recipe.image.url}}">
+    <p><b>Описание:</b><br> {{recipe.desc}}</p>
+    <p><b>Шаги приготовления:</b><br> {{recipe.cooking_steps}}</p>
+    <p><b>Время приготовления (часы-минуты):</b><br> {{ recipe.time_cooking|time:"H:i" }}</p>
+    <p><b>Категории:</b><br> {{categories}}</p>    
+    <p><b>Данные об авторе:</b><br> {{recipe.author}}</p>
+    <p><b>Дата последней редакции:</b><br> {{ recipe.date }}</p>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'myapp/baseUserStatus.html' %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+    <h1>Рецепты на любой вкус</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla reprehenderit nihil omnis amet quos dolorem cum voluptatem sunt. Nesciunt maxime ad voluptate porro sapiente voluptatibus unde libero facilis fugiat sint numquam cupiditate quae tempora, rerum corporis enim fuga aspernatur neque quas! Consectetur modi, similique eius voluptate expedita, magni dolorum recusandae, ipsum porro perspiciatis pariatur atque rerum doloremque distinctio iste quo cumque aliquid eligendi incidunt? Libero consequatur cupiditate, ipsam officiis voluptatibus ab quod quae mollitia aspernatur eveniet! Maiores beatae sint autem voluptas, earum dicta ipsam dolores cumque ratione esse odit reiciendis eligendi! Quia aspernatur eaque mollitia magnam et inventore saepe omnis!</p>
+    {% for s in data_recipes %}
+        <h3>{{s.recipe.name}} <i>(автор: {{s.recipe.author.username}})</i></h3>
+        <img src="{{s.recipe.image.url}}">
+        <p>{{s.short_desc}}</p>
+    {% endfor %}
+{% endblock %}

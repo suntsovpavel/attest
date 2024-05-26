@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>{% block title %}Сайт{% endblock %}</title>
+  </head>
+  <body>
+    {% block content %}
+    <p>Скоро тут появится текст...</p>
+    {% endblock %}
+  </body>
+</html>

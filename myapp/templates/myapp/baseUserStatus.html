@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>{% block title %}Сайт{% endblock %}</title>
+  </head>
+  <body>
+    <div class="user_line">
+      {% if user.is_authenticated %}
+          Добро пожаловать, {{ user.username }}! &nbsp;&nbsp; <a href="/logout/">Выйти</a>
+      {% else %}
+          Пожалуйста, <a href="/login">авторизуйтесь</a> или <a href="/reg">зарегистрируйтесь</a>
+      {% endif %}
+    </div>
+
+    {% block content %}
+    <p>Скоро тут появится текст...</p>
+    {% endblock %}
+  </body>
+</html>
